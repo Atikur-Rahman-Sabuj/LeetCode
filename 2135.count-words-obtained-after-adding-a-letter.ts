@@ -6,15 +6,28 @@
 
 // @lc code=start
 function wordCount(startWords: string[], targetWords: string[]): number {
+   let startSet = new Set();
    let count = 0;
-   for (const tWord of targetWords) {
-      for (const sWord of startWords) {
-         if (tWord.length === sWord.length + 1) {
-            let o = [...tWord].filter((c, i) => sWord.indexOf(c) == -1);
-            if (o.length === 1) {
-               count++;
-               break;
-            }
+   for (const word of startWords) {
+      let bitMap = 0;
+      for (const char of word) {
+         bitMap ^= 1 << (char.charCodeAt(0) - "a".charCodeAt(0));
+      }
+      startSet.add(bitMap);
+   }
+   for (const word of targetWords) {
+      let bitMap = 0;
+      let found = false;
+      for (const char of word) {
+         bitMap ^= 1 << (char.charCodeAt(0) - "a".charCodeAt(0));
+      }
+      for (const char of word) {
+         let nBitMap = bitMap;
+         nBitMap ^= 1 << (char.charCodeAt(0) - "a".charCodeAt(0));
+         if (startSet.has(nBitMap)) {
+            count++;
+            found = true;
+            break;
          }
       }
    }
