@@ -60,7 +60,6 @@ function matchReplacement(s: string, sub: string, mappings: string[][]): boolean
    for (let i = 0; i < mappings.length; i++) {
       map.set(mappings[i][0] + mappings[i][1], true);
    }
-   let j = 0;
    function checkMatch(start: number) {
       for (let i = 0; i < sub.length; i++) {
          if (sub[i] === s[start] || map.has(sub[i] + s[start])) {
