@@ -7,17 +7,14 @@
 // @lc code=start
 function updateMatrix(mat: number[][]): number[][] {
    const output: number[][] = Array(mat.length);
+   const BIG_NUMBER = 1000000;
    const m = mat.length,
       n = mat[0].length;
    for (let i = 0; i < m; i++) {
       output[i] = Array(n).fill(0);
       for (let j = 0; j < mat[i].length; j++) {
-         if (i === 0 && j === 0) {
-            output[i][j] = mat[i][j];
-         } else if (i === 0 && j !== 0) {
-            output[i][j] = mat[i][j] ? output[i][j - 1] + 1 : 0;
-         } else if (i !== 0 && j === 0) {
-            output[i][j] = mat[i][j] ? output[i - 1][j] + 1 : 0;
+         if (i === 0 || j === 0) {
+            output[i][j] = mat[i][j] ? BIG_NUMBER : 0;
          } else {
             output[i][j] = mat[i][j] ? Math.min(output[i - 1][j], output[i][j - 1]) + 1 : 0;
          }
@@ -34,8 +31,11 @@ function updateMatrix(mat: number[][]): number[][] {
          output[i][j] = mat[i][j] ? Math.min(Math.min(output[i + 1][j], output[i][j + 1]) + 1, output[i][j]) : 0;
       }
    }
-   if (mat[0][0] !== 0) {
-      mat[0][0];
+   for (let i = 1; i < m; i++) {
+      output[i][0] = Math.min(output[i][0], output[i - 1][0] + 1);
+   }
+   for (let i = 1; i < n; i++) {
+      output[0][i] = Math.min(output[0][i], output[0][i - 1] + 1);
    }
    return output;
 }
