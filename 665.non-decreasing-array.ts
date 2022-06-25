@@ -24,4 +24,4 @@ function checkPossibility(nums: number[]): boolean {
 // @lc code=end
 //4 2  3
 
-checkPossibility([5, 7, 1, 8]);
+console.log(checkPossibility([5, 7, 1, 8]));
