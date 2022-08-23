@@ -7,7 +7,6 @@ var sortedSquares = function(nums) {
     if (nums[0] < 0) {
       num = nums[0] * nums[0];
     }
-    //if (num === -1) return nums;
     for (let i = nums.length - 1; i >= 0; i--) {
       const currentNumber = nums[i] * nums[i];
       if (currentNumber <= num) {
