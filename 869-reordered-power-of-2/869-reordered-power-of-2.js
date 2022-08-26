@@ -15,7 +15,7 @@ var reorderedPowerOf2 = function(n) {
     let itString = it.toString();
     let itLen = itString.length;
     while(itLen <= nLen && it < 10000000000){
-        if(checkMatch(itString)){
+        if(itLen === nLen && checkMatch(itString)){
             return true;
         }
         it = it << 1;
