@@ -12,7 +12,7 @@ var maxProduct = function(nums) {
       tempMax = pastMax;
       pastMin = Math.min(tempMin * nums[i], tempMax * nums[i], nums[i]);
       pastMax = Math.max(tempMin * nums[i], tempMax * nums[i], nums[i]);
-      maxProduct = Math.max(maxProduct, pastMin, pastMax);
+      maxProduct = Math.max(maxProduct, pastMax);
    }
    return maxProduct;
 };
