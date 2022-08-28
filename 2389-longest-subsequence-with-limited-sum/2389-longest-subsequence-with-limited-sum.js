@@ -19,7 +19,7 @@ var answerQueries = function(nums, queries) {
         }
         if(ansI >= queries.length) break;
     }
-    //console.log(queryArray);
+
     queryArray.sort((a, b) => a[1] - b[1]);
     
     return queryArray.map(a => a[2]);
