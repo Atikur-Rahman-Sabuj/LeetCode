@@ -19,7 +19,7 @@ var garbageCollection = function(garbage, travel) {
             gEnd = i;
         }
     }
-    //add trabel time with for each garbage type untill 
+    //add travel time with total time for each garbage type untill 
     //their last position
     for(let i = 0  ; i < travel.length ; i++){
         if(mEnd > i) total += travel[i];
