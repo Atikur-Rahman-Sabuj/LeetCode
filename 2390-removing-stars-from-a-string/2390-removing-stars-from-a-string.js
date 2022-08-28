@@ -18,7 +18,6 @@ var removeStars = function(s) {
         }
         
     }
-    
     //reverse the array
     ans.reverse();
     //join to make a string and return
