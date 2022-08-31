@@ -49,17 +49,6 @@ var insert = function(intervals, newInterval) {
     return intervals
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     function lowerBound(min, max, val){
         let mid = Math.floor((min+max)/2);
         if(intervals[mid][0] <= val && intervals[mid][1]>=val){
