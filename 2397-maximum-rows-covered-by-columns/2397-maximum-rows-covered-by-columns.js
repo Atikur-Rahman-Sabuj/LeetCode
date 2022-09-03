@@ -11,7 +11,6 @@ var maximumRows = function(mat, cols) {
     perMute(0, []);
     function perMute(index, arr){
         if(arr.length === cols){
-            //console.log(arr)
             let total = 0;
             for(let i = 0 ; i < m ; i++){
                 let sum = 0;
