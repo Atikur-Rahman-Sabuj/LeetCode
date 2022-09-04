@@ -26,8 +26,6 @@ var mostBooked = function(n, meetings) {
             count[minRoom]++;
             freeTime[minRoom] += meetings[i][1] - meetings[i][0]; 
         }
-        //console.log(freeTime)
-        //console.log(count)
     }
     
     let ans = 0;
