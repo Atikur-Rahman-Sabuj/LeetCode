@@ -29,7 +29,6 @@ function rotateRight(head: ListNode | null, k: number): ListNode | null {
             slow = slow.next;
         }
     }
-    //console.log(fast.val, slow.val);
     fast.next = head;
     const result = slow.next;
     slow.next = null
