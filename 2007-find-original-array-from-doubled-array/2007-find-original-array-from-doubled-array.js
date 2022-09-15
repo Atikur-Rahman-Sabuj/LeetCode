@@ -20,9 +20,6 @@ var findOriginalArray = function(changed) {
                 m.set(changed[i], 1);
             }
         }
-        //console.log(m)
     }
-    //console.log(changed)
-    //console.log(ans)
     return ans.length === Math.floor(n/2)? ans:[];
 };
