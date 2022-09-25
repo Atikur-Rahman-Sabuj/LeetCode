@@ -4,34 +4,18 @@
  * @return {number[]}
  */
 var goodIndices = function(nums, k) {
-    let rl = 0, n = nums.length;
-    const ans = [];
-    if(k === 1){
-        for(let i = 1; i<n-1; i++){
-            ans.push(i);
-        }
-        return ans;
-    }
-    for(let i = 1 ; i < n-k ; i++){
-        //console.log(i, nums[i], rl)
-        if(rl >= k - 1){
-            let mis = 0;
-            for(let j = i + 1 ; j < i + k ; j++){
-                if(nums[j+1] - nums[j] < 0){
-                    mis = 1;
-                    break;
-                }
-            }
-            if(mis === 0){
-                ans.push(i);
-            }
-        }
-        
-        if(nums[i-1]-nums[i] < 0){
-            rl = 0;
-        }else{
-            rl++;
-        }
-    }
+    const n = nums.length;
+    const dp1= new Array(n+1).fill(1)
+    const dp2= new Array(n+1).fill(1)
+    const ans = []
+
+    for(let i = 1 ; i < n ; i++)  
+        if(nums[i-1] >= nums[i]) dp1[i] = dp1[i-1]+1;
+
+    for(let i = n-2 ; i>=0 ; i--)
+        if(nums[i]<=nums[i+1]) dp2[i] = dp2[i+1]+1;
+
+    for(let i=k ; i<n-k ; i++)
+        if(dp1[i-1]>=k && dp2[i+1]>=k) ans.push(i);
     return ans;
 };
