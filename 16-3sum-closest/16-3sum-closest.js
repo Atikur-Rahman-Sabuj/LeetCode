@@ -4,7 +4,7 @@
  * @return {number}
  */
 var threeSumClosest = function(nums, target) {
-    const n = nums.length;
+        const n = nums.length;
     let ans = Number.MAX_SAFE_INTEGER;
     
     nums.sort((a,b) => a - b);
