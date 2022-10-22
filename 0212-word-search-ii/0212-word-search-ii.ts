@@ -46,7 +46,7 @@ function findWords(board: string[][], words: string[]): string[] {
         find(i+1, j, trieNode.children[c]);
         visited[(col * i) + j] = false;
     }
-    console.log(res)
+    //console.log(res)
     return words.filter((val, i) => res[i])
     
    
