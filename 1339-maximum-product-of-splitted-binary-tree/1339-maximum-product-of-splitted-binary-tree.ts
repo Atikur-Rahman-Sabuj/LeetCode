@@ -19,7 +19,7 @@ function maxProduct(root: TreeNode | null): number {
     return ans % (1e9 + 7)
     
     // traverse through the tree, find sum of every sub tree 
-    // then calculate sum
+    // then calculate product of (totalSum - subTreeSum) * subTreeSum 
     function traverse(node){
         if(node === null) return 0
         const left = traverse(node.left)
