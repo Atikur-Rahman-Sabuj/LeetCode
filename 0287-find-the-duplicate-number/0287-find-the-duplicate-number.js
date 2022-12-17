@@ -5,8 +5,8 @@
 var findDuplicate = function(nums) {
     
     
-    //time -> n
-    //space -> 1
+    //time -> O()n)
+    //space -> O(1)
     let len = nums.length;
     for (const num of nums) {
         let idx = Math.abs(num);
@@ -18,8 +18,8 @@ var findDuplicate = function(nums) {
     return len;
     
     
-    //time nlong
-    //space 1
+    //time O(nlong)
+    //space O(1)
     // const len = nums.length;
     // let low = 1, high = len - 1;
     // while(low<high){
