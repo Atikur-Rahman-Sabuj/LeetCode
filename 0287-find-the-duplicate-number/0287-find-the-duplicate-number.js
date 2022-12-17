@@ -5,7 +5,7 @@
 var findDuplicate = function(nums) {
     
     
-    //time -> O()n)
+    //time -> O(n)
     //space -> O(1)
     let len = nums.length;
     for (const num of nums) {
