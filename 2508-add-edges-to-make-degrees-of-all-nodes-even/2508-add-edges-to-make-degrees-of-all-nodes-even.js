@@ -29,6 +29,7 @@ var isPossible = function(n, edges) {
             }
         }
     }
+    
     if(oddNodes.length === 4){
         let node1 = ([oddNodes[0], oddNodes[1]]).join("-");
         let node2 = ([oddNodes[0], oddNodes[2]]).join("-");
