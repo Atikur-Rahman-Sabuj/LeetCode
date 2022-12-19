@@ -6,7 +6,6 @@
  * @return {boolean}
  */
 var validPath = function(n, edges, source, destination) {
-    if(source === destination) return true;
     const vt = new Map();
     const st = [source];
     const eg = new Map();
@@ -27,11 +26,11 @@ var validPath = function(n, edges, source, destination) {
     
     while(st.length > 0){
         const temp = st.pop();
+        if(temp === destination) return true;
         vt.set(temp, 1);
         const tNs = eg.get(temp) || [];
         for(let i = 0 ; i < tNs.length ; i++){
             if(!vt.has(tNs[i])){
-                if(tNs[i] === destination) return true
                 st.push(tNs[i]);
             }
         }
