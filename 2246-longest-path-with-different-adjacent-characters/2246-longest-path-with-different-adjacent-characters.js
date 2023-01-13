@@ -29,7 +29,6 @@ var longestPath = function(parent, s) {
             ans = Math.max(ans, val)
             return val;
         }
-        //console.log(lengths)
         if(lengths[1]){
             lengths.sort((a,b)=>b-a);
             val = lengths[0] + lengths[1] - 1;
