@@ -11,7 +11,6 @@ var leftRigthDifference = function(nums) {
     for(let i = n-1 ; i >= 0 ; i--){
         lt -= nums[i]
         rt += nums[i];
-        //console.log(i, lt, rt, nums[i])
         nums[i] = Math.abs(lt - rt + nums[i]);
     }
     return nums
