@@ -12,8 +12,8 @@
  */
 var detectCycle = function(head) {
     let node = head;
-   if(head === null) return head;
-   while (true) {
+    if(head === null) return head;
+    while (true) {
       if (node.next === null) return null;
       if(node.next === node) return node;
       let t = head;
@@ -24,5 +24,5 @@ var detectCycle = function(head) {
          t = t.next;
       }
       node = node.next;
-   }
+    }
 };
