@@ -29,11 +29,8 @@ var minReorder = function(n, connections) {
         for(const child of m.get(elem) || []){
             if(!v[child[0]]){
                 if(child[1] === 1){
-                    //console.log(child[0])
-                    ans++;
-                    
-                }
-                    
+                    ans++; 
+                }    
                 q.push(child[0]);
             }
         }
