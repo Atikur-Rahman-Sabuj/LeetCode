@@ -8,7 +8,6 @@ var mincostTickets = function(days, costs) {
     const dp = new Array(days.length).fill(Infinity);
     let j = 0;
     let k = 0;
-    
     const dayMin = Math.min(...costs)
     const weekMin = Math.min(costs[1], costs[2])
     dp[0] = dayMin;
@@ -21,6 +20,5 @@ var mincostTickets = function(days, costs) {
         }
         dp[i] = Math.min((dp[i-1] + dayMin), (dp[j-1] || 0)+weekMin, (dp[k-1] || 0)+costs[2]);
     }
-    //console.log(dp)
     return dp[days.length - 1];
 };
