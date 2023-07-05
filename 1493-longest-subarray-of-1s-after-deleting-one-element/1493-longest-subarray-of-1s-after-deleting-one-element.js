@@ -7,8 +7,6 @@ var longestSubarray = function(nums) {
     let lz = -1, llz = -2, cl = 0;
     for(let i = 0 ; i <= nums.length ; i++){
         if(nums[i] !== 1){
-
-            //console.log(lz, llz, i)
             ans = Math.max(ans, i-2 - llz)
             llz = lz;
             lz = i;
