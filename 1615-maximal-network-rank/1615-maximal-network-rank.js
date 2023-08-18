@@ -12,8 +12,6 @@ var maximalNetworkRank = function(n, roads) {
         freq[l[0]]++;
         freq[l[1]]++;
     }
-    //console.log(c)
-    //console.log(freq)
     let ans = 0;
     for(let i = 0 ; i < n - 1 ; i++){
         for(let j = i+1 ; j < n ; j++){
