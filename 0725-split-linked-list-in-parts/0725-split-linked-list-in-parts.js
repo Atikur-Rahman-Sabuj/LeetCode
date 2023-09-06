@@ -19,7 +19,6 @@ var splitListToParts = function(head, k) {
     t = head;
     const ans = new Array(k).fill(null), perPart = Math.floor(c / k);
     let fullPart = c % k;
-    console.log(fullPart)
     for(let i = 0 ; i < k ; i++){
         if(t != null){
             ans[i] = t;
@@ -36,9 +35,7 @@ var splitListToParts = function(head, k) {
                 t = t.next;
                 node.next = null;
             }
-            
         }
-        
     }
     return ans;
 };
