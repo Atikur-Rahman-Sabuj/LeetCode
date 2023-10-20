@@ -53,8 +53,6 @@ class NestedIterator {
             })
         }
         flatted(nestedList)
-        
-        //console.log(this.list)
     }
 
     hasNext(): boolean {
