@@ -9,7 +9,7 @@ var maxProfit = function(prices) {
         
         own = Math.max(prevOwn, prvNotOwn - prices[i]);
         notOwn = Math.max(prvNotOwn, prevOwn + prices[i]);
-        //console.log(own, notOwn)
+
         ans = Math.max(ans, notOwn);
     }
     return ans;
