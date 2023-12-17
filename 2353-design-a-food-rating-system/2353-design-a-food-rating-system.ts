@@ -26,7 +26,8 @@ class FoodRatings {
                     if(this.foods[highIndex] > this.foods[i]) highIndex = i
                 }
             }
-        }return this.foods[highIndex]
+        }
+        return this.foods[highIndex]
     }
 }
 
