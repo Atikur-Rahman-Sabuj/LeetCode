@@ -17,5 +17,4 @@ var minCost = function(colors, neededTime) {
     }
     totalCost -= lastMax;
     return totalCost;
-    
 };
