@@ -12,16 +12,16 @@ var findLeastNumOfUniqueInts = function(arr, k) {
             m.set(num, 1);
         }
     }
-    const sarr = [];
+    const farr = [];
     m.forEach((freq, num) => {
-        sarr.push([freq, num])
+        farr.push(freq)
     })
-    sarr.sort((a,b) => a[0] - b[0]);
+    farr.sort((a,b) => a - b);
     let count = 0;
-    for(let i = 0 ; i < sarr.length ; i++){
-        count += sarr[i][0];
+    for(let i = 0 ; i < farr.length ; i++){
+        count += farr[i];
         if(count > k){
-            return sarr.length - i;
+            return farr.length - i;
         }
     }
     return 0
