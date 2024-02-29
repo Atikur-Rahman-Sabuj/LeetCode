@@ -15,7 +15,6 @@ var isEvenOddTree = function(root) {
     let ans = true;
     traverse(root, 0)
     function traverse(node, level){
-        //console.log(check, ans)
         if(node == null) return;
         traverse(node.left, level + 1);
         if(check[level] == undefined){
